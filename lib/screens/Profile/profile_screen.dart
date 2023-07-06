@@ -1,3 +1,4 @@
+import 'package:ecommerce/screens/Profile/settings_screen.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -29,7 +30,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     Text(
                       'My Profile',
                       style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+                      TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
                     )
                   ],
                 ),
@@ -245,7 +246,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       border: Border(
                           bottom: BorderSide(width: 1, color: Colors.black26))),
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(
+                          builder: (_) => const SettingsScreen()));
+                    },
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,

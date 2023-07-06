@@ -70,8 +70,10 @@ class _ShopScreenState extends State<ShopScreen> {
                         TextButton(
                             onPressed: () {
                               showModalBottomSheet<void>(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20.0),
+                                shape: const RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.only(
+                                      topRight: Radius.circular(20.0),
+                                      topLeft: Radius.circular(20.0)),
                                 ),
                                 context: context,
                                 builder: (BuildContext context) {

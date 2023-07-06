@@ -16,6 +16,19 @@ class _LoginScreenState extends State<LoginScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
+  void handleLogin() {
+    if (_emailController.text.isEmpty || _passwordController.text.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        content: Text("Email or password is empty"),
+      ));
+      return;
+    } else {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (_) => const MainScreen()));
+      return;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -101,10 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 ElevatedButton(
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (_) => const MainScreen()));
+                      handleLogin();
                     },
                     style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFFDB3022),

@@ -1,6 +1,7 @@
 import 'package:ecommerce/screens/Auth/login_screen.dart';
 import 'package:ecommerce/screens/Master/main_screen.dart';
 import 'package:ecommerce/screens/Auth/register_screen.dart';
+import 'package:ecommerce/screens/Product/product_details_screen.dart';
 import 'package:ecommerce/screens/Splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         RegisterScreen.id: (_) => const RegisterScreen(),
         LoginScreen.id: (_) => const LoginScreen(),
         MainScreen.id: (_) => const MainScreen(),
+        ProductDetailsScreen.id: (_) => const ProductDetailsScreen(),
       },
     );
   }
