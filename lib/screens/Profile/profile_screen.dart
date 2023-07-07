@@ -1,3 +1,4 @@
+import 'package:ecommerce/screens/Order/order_screen.dart';
 import 'package:ecommerce/screens/Profile/settings_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +31,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     Text(
                       'My Profile',
                       style:
-                      TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
                     )
                   ],
                 ),
@@ -71,7 +72,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       border: Border(
                           bottom: BorderSide(width: 1, color: Colors.black26))),
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => const OrderScreen()));
+                    },
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -247,8 +253,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           bottom: BorderSide(width: 1, color: Colors.black26))),
                   child: TextButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(
-                          builder: (_) => const SettingsScreen()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => const SettingsScreen()));
                     },
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

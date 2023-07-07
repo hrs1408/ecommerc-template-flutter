@@ -1,4 +1,3 @@
-import 'package:ecommerce/screens/Master/main_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'category_kid.dart';
@@ -26,12 +25,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
           children: [
             IconButton(
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (_) => const MainScreen(
-                              shopScreen: true,
-                            )));
+                Navigator.pop(context, true);
               },
               icon: const Icon(Icons.arrow_back_ios),
             ),
@@ -112,7 +106,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
           ],
         ),
         SizedBox(
-          height: MediaQuery.of(context).size.height - 115,
+          height: MediaQuery.of(context).size.height - 121,
           child: tabView,
         )
       ])),

@@ -38,6 +38,11 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   carousel_slider: ^4.2.1
   dropdown_button2: ^2.3.4
+  percent_indicator: ^4.2.3
+  getwidget: ^3.1.1
+  awesome_card: ^1.1.7
+  flutter_credit_card: ^3.0.7
+
 
 dev_dependencies:
   flutter_test:
@@ -74,6 +79,7 @@ flutter:
     - asset/category_woman.png
     - asset/avatar.png
     - asset/product_details.png
+    - asset/success_order.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

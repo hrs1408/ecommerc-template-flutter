@@ -1,15 +1,14 @@
-import 'package:ecommerce/screens/bag_screen.dart';
-import 'package:ecommerce/screens/favorites_screen.dart';
-import 'package:ecommerce/screens/home_screen.dart';
+import 'package:ecommerce/screens/Bag/bag_screen.dart';
+import 'package:ecommerce/screens/Favorite/favorites_screen.dart';
+import 'package:ecommerce/screens/Master/home_screen.dart';
 import 'package:ecommerce/screens/Profile/profile_screen.dart';
 import 'package:ecommerce/screens/Shop/shop_screen.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
   static const id = 'main_screen';
-  final bool? shopScreen;
 
-  const MainScreen({super.key, this.shopScreen});
+  const MainScreen({super.key});
 
   @override
   State<MainScreen> createState() => _MainScreenState();
@@ -27,20 +26,7 @@ class _MainScreenState extends State<MainScreen> {
   ];
 
   final PageStorageBucket bucket = PageStorageBucket();
-  late Widget currentScreen;
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    if (widget.shopScreen != null && widget.shopScreen == true) {
-      currentScreen = const ShopScreen(
-        category: 'All Product',
-      );
-      currentTab = 1;
-    } else {
-      currentScreen = const HomeScreen();
-    }
-  }
+  Widget currentScreen = const HomeScreen();
 
   @override
   Widget build(BuildContext context) {

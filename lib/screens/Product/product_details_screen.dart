@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ecommerce/components/product_item.dart';
 import 'package:ecommerce/components/rating_star_widget.dart';
+import 'package:ecommerce/screens/Product/review_product_screen.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
@@ -54,7 +55,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               ],
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height - 136,
+              height: MediaQuery.of(context).size.height - 142,
               child: ListView(
                 children: [
                   CarouselSlider(
@@ -263,7 +264,13 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                 bottom: BorderSide(
                                     width: 1, color: Colors.black26))),
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) =>
+                                        const ReviewProductScreen()));
+                          },
                           child: const Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -272,7 +279,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Support',
+                                    'Reviews',
                                     style: TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.w500,

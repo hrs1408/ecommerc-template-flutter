@@ -2,17 +2,14 @@ import 'package:ecommerce/components/product_land_item.dart';
 import 'package:ecommerce/screens/Shop/Category/category_screen.dart';
 import 'package:flutter/material.dart';
 
-class ShopScreen extends StatefulWidget {
-  static const id = 'shop_screen';
-  final String category;
-
-  const ShopScreen({super.key, required this.category});
+class FavoritesScreen extends StatefulWidget {
+  const FavoritesScreen({super.key});
 
   @override
-  State<ShopScreen> createState() => _ShopScreenState();
+  State<FavoritesScreen> createState() => _FavoritesScreenState();
 }
 
-class _ShopScreenState extends State<ShopScreen> {
+class _FavoritesScreenState extends State<FavoritesScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -23,27 +20,100 @@ class _ShopScreenState extends State<ShopScreen> {
           child: Column(
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  IconButton(
-                      onPressed: () {}, icon: const Icon(Icons.arrow_back_ios)),
                   IconButton(onPressed: () {}, icon: const Icon(Icons.search))
                 ],
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(12, 12, 12, 6),
+              const Padding(
+                padding: EdgeInsets.all(10),
                 child: Column(
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                          widget.category,
-                          style: const TextStyle(
+                          'Favorites',
+                          style: TextStyle(
                               fontSize: 24, fontWeight: FontWeight.bold),
-                        )
+                        ),
                       ],
                     ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: 50,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Row(
+                        children: [
+                          ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.black,
+                                  shape: const StadiumBorder(),
+                                  padding:
+                                      const EdgeInsets.fromLTRB(20, 0, 20, 0)),
+                              child: const Text('Summer')),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.black,
+                                  shape: const StadiumBorder(),
+                                  padding:
+                                      const EdgeInsets.fromLTRB(20, 0, 20, 0)),
+                              child: const Text('T-shirt')),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.black,
+                                  shape: const StadiumBorder(),
+                                  padding:
+                                      const EdgeInsets.fromLTRB(20, 0, 20, 0)),
+                              child: const Text('Shirt')),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.black,
+                                  shape: const StadiumBorder(),
+                                  padding:
+                                      const EdgeInsets.fromLTRB(20, 0, 20, 0)),
+                              child: const Text('Pants')),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.black,
+                                  shape: const StadiumBorder(),
+                                  padding:
+                                      const EdgeInsets.fromLTRB(20, 0, 20, 0)),
+                              child: const Text('Jeans')),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(12, 12, 12, 6),
+                child: Column(
+                  children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -204,14 +274,14 @@ class _ShopScreenState extends State<ShopScreen> {
                     )
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),
         SizedBox(
-            height: MediaQuery.of(context).size.height - 226,
-            child: const SingleChildScrollView(
-                child: Padding(
+          height: MediaQuery.of(context).size.height - 290,
+          child: const SingleChildScrollView(
+            child: Padding(
               padding: EdgeInsets.all(8),
               child: Wrap(
                 children: [
@@ -225,7 +295,9 @@ class _ShopScreenState extends State<ShopScreen> {
                   ProductLandItem(),
                 ],
               ),
-            )))
+            ),
+          ),
+        ),
       ],
     ));
   }
